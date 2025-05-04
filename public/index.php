@@ -1,21 +1,18 @@
 <?php
 require '../helpers.php';
+require basePath('Router.php');
 
-$routes = [
-  '/' => 'controllers/home.php',
-  '/recipes' => 'controllers/recipes/index.php',
-  '/recipes/add' => 'controllers/recipes/add.php',
-  '404' => 'controllers/error/404.php'
-];
+//define router first so we can access the variable in routes.php that we are requiring next
+$router = new Router();
+
+//get our routes
+$routes = require basePath('routes.php');
 
 //get the current uri ex) '/' or '/recipes'
 $uri = $_SERVER['REQUEST_URI'];
 
-//check the current uri is in our routes array and if it is then require it
-//else load the 404 route
-if (array_key_exists($uri, $routes)){
-  require basePath($routes[$uri]);
-}else{
-  require basePath($routes['404']);
-}
+//get the method from the server i.e. POST, GET, etc
+$method = $_SERVER['REQUEST_METHOD'];
 
+//call our route function with the uri and method for the current page being accessed
+$router->route($uri, $method);
