@@ -1,5 +1,6 @@
 <?php
 require '../helpers.php';
 
-require basePath('views/home.view.php');
+//use custom function in helpers.php to load the view
+loadView('home');
 
