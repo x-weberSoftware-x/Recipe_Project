@@ -23,7 +23,7 @@
       </button>
     </form>
   </div>
-  <a href="recipes.html" class="block text-l text-center mb-6">
+  <a href="/recipes" class="block text-l text-center mb-6">
     <i class="fa fa-arrow-alt-circle-right"></i>
     Show All Recipes
   </a>
