@@ -16,10 +16,14 @@ function basePath($path = ''){
  * @param string $name
  * @return void
  */
-function loadView($name){
+function loadView($name, $data = []){
   $viewPath = basePath("views/{$name}.view.php");
 
   if(file_exists($viewPath)){
+    //import variables from the $data array, so the keys become variables we can call in the file
+    //that called this function
+    extract($data);
+
     require $viewPath;
   }else{
     echo "View {$viewPath} not found!";

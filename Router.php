@@ -5,7 +5,14 @@ class Router
 
   protected $routes = [];
 
-  //helper method to register routes
+  /**
+   * Add a new route to the routes array
+   *
+   * @param string $method
+   * @param string $uri
+   * @param string $controller
+   * @return void
+   */
   public function registerRoute($method, $uri, $controller)
   {
 
