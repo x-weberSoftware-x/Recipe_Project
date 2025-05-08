@@ -6,3 +6,4 @@
 $router->get('/', 'controllers/home.php');
 $router->get('/recipes', 'controllers/recipes/index.php');
 $router->get('/recipes/add', 'controllers/recipes/add.php');
+$router->get('/recipe', 'controllers/recipes/show.php');

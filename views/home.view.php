@@ -23,7 +23,7 @@
             </div>
             <!-- we are fetching as an object so we grab the value by using the ->field name in db -->
             <h2 class="text-xl font-semibold mb-2 mt-2 text-center"><?= $recipe->name ?></h2>
-            <a href="/recipes/<?= $recipe->id ?>"
+            <a href="/recipe?id=<?= $recipe->id ?>"
               class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-white bg-gray-300 hover:bg-gray-300">
               Details
             </a>

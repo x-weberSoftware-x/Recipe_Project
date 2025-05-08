@@ -86,7 +86,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       <div class="mb-4">
         <textarea
           name="ingredients"
-          placeholder="Ingredients and Measurements ( sperate with a , )"
+          placeholder="Ingredients and Measurements ( seperate with a , )"
           class="w-full px-4 py-2 border rounded focus:outline-none"></textarea>
       </div>
       <div class="mb-4">

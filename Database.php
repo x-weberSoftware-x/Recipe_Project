@@ -35,11 +35,17 @@ class Database{
    * @return PDOStatement
    * @throws PDOException
    */
-  public function query($query){
+  public function query($query, $params = []){
 
     try {
       //prepare the statement for execution
       $stmnt = $this->connection->prepare($query);
+
+      //bind the named paramaters, this will allow us to pass in :id and the value would be just id
+      foreach ($params as $param => $value){
+        $stmnt->bindValue(':' . $param, $value);
+      }
+
       //execute the statement
       $stmnt->execute();
       return $stmnt;
